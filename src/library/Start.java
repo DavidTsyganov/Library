@@ -3,8 +3,8 @@ package library;
 import java.util.List;
 
 public class Start {
-    private static BookDataAccess books;
-    private static AuthorDataAccess authors;
+    private static BookDataAccess books = new BookDataAccess();
+    private static AuthorDataAccess authors = new AuthorDataAccess();
 
     public static void main(String[] args) {
         Author author1 = new Author(1, "Алексей Марков");
@@ -17,6 +17,9 @@ public class Start {
 
         authors.add(author1);
         authors.add(author2);
+
+        Service.showAllAuthors(authors);
+        Service.showAllBooks(books);
 
 
     }
